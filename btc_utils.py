@@ -1,7 +1,7 @@
 import os, ecdsa, hashlib, base58
 
 
-def create_address():
+def generate_address():
     """
     Generates a random Private Key and its corresponding Bitcoin Address.
     Returns:
@@ -20,7 +20,7 @@ def create_address():
 
     # the private_key which is bytes, turns into decimal number and gets verified 
     # whether or not it is in the specified curve range.
-    sk = ecdsa.SigningKey.from_string(private_key, curve=ecdsa.SECP256k1)
+    sk = ecdsa.SigningKey.from_string(private_key, curve=secp256k1_curve)
     # compute key * Generator
     vk = sk.verifying_key
 
